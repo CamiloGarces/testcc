@@ -10,7 +10,7 @@ interface QuizScreenProps {
   onPrev: () => void
   isLastQuestion: boolean
 }
-
+const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 const QuizScreen: React.FC<QuizScreenProps> = ({
   question,
   currentIndex,
@@ -21,24 +21,29 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
   onPrev,
   isLastQuestion,
 }) => (
-  <div className="h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-xl w-full">
-      <p className="text-sm text-gray-500">
-        Pregunta {currentIndex + 1} de {totalQuestions}
+  <div className="h-screen flex flex-col items-center justify-center bg-[#C8D2D9] p-6">
+    <div className=" p-6 max-w-xl w-full">
+      <p className="text-[30px] text-[#4242E0] text-center font-semibold">
+        Question {currentIndex + 1} of {totalQuestions}
       </p>
-      <h2 className="text-2xl font-semibold my-4">{question?.question}</h2>
+      <h2 className="text-[#4242E0] text-2xl my-4 text-center">
+        {question?.question}
+      </h2>
       <div className="flex flex-col gap-2">
-        {Object.entries(question?.answers || {}).map(([key, value]) =>
+        {Object.entries(question?.answers || {}).map(([key, value], index) =>
           value ? (
             <button
               key={key}
               onClick={() => onSelectAnswer(key)}
-              className={`px-4 py-2 rounded-lg ${
+              className={`flex items-center gap-2 px-4 py-2 border border-[#4242E0] text-[#4242E0] ${
                 selectedAnswer === key
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-200'
+                  ? 'bg-blue-500 text-[#fff]'
+                  : 'bg-[#C8D2D9]'
               }`}
             >
+              <span className="flex items-center justify-center w-6 h-6 bg-[#4242E0] text-white rounded-full">
+                {letters[index]}
+              </span>
               {value}
             </button>
           ) : null,
@@ -62,7 +67,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
         ) : (
           <button
             onClick={onNext}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+            className="px-4 py-2 bg-[#4242E0] text-white"
           >
             Next
           </button>
