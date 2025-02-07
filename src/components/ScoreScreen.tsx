@@ -12,7 +12,7 @@ const ScoreScreen: React.FC<ScoreScreenProps> = ({ score, onRestart }) => (
         <div className="content-bravo">Bravo!</div>
         <div className="content-score ">YOU HAVE SCORED!</div>
         <div onClick={onRestart} className="content-restart">
-          Wanna Play Again!
+          Wanna Play Again?
         </div>
       </div>
     </div>
