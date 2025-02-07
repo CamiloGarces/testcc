@@ -21,7 +21,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
   onPrev,
   isLastQuestion,
 }) => (
-  <div className="h-screen flex flex-col items-center justify-center bg-[#C8D2D9] p-6 overflow-y-auto">
+  <div className="min-h-screen flex flex-col items-center justify-start bg-[#C8D2D9] p-6 overflow-y-auto">
     <div className=" p-6 max-w-xl w-full">
       <p className="question">
         QUESTION {currentIndex + 1} / {totalQuestions}
@@ -49,7 +49,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
           ) : null,
         )}
       </div>
-      <div className=" footer-buttons flex justify-between mt-4">
+      <div className="footer-buttons flex justify-center gap-4 mt-4">
         <button
           onClick={onPrev}
           disabled={currentIndex === 0}
@@ -67,7 +67,9 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
         ) : (
           <button
             onClick={onNext}
-            className="px-4 py-2 bg-[#4242E0] text-white"
+            className={`px-4 py-2 text-white ${
+              selectedAnswer ? 'bg-[#4242E0]' : 'bg-gray-400 cursor-not-allowed'
+            }`}
           >
             Next
           </button>
