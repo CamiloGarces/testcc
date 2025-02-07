@@ -3,6 +3,7 @@ import StartScreen from './components/StartScreen'
 import QuizScreen from './components/QuizScreen'
 import ScoreScreen from './components/ScoreScreen'
 import axios from 'axios'
+import './App.css'
 
 const App: React.FC = () => {
   const [start, setStart] = useState(false)

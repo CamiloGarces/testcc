@@ -21,10 +21,10 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
   onPrev,
   isLastQuestion,
 }) => (
-  <div className="h-screen flex flex-col items-center justify-center bg-[#C8D2D9] p-6">
+  <div className="h-screen flex flex-col items-center justify-center bg-[#C8D2D9] p-6 overflow-y-auto">
     <div className=" p-6 max-w-xl w-full">
       <p className="text-[30px] text-[#4242E0] text-center font-semibold">
-        Question {currentIndex + 1} of {totalQuestions}
+        QUESTION {currentIndex + 1} / {totalQuestions}
       </p>
       <h2 className="text-[#4242E0] text-2xl my-4 text-center">
         {question?.question}
@@ -53,14 +53,14 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
         <button
           onClick={onPrev}
           disabled={currentIndex === 0}
-          className="px-4 py-2 bg-gray-300 rounded-lg disabled:opacity-50"
+          className="px-4 py-2 bg-[#4242E0] disabled:opacity-30"
         >
           Prev
         </button>
         {isLastQuestion ? (
           <button
             onClick={onNext}
-            className="px-4 py-2 bg-green-500 text-white rounded-lg"
+            className="px-4 py-2 bg-green-500 text-white"
           >
             Send
           </button>
