@@ -23,10 +23,10 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
 }) => (
   <div className="h-screen flex flex-col items-center justify-center bg-[#C8D2D9] p-6 overflow-y-auto">
     <div className=" p-6 max-w-xl w-full">
-      <p className="text-[30px] text-[#4242E0] text-center font-semibold">
+      <p className="question">
         QUESTION {currentIndex + 1} / {totalQuestions}
       </p>
-      <h2 className="text-[#4242E0] text-2xl my-4 text-center">
+      <h2 className="question-complete text-[#4242E0] text-2xl my-4 text-center">
         {question?.question}
       </h2>
       <div className="flex flex-col gap-2">
@@ -35,7 +35,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
             <button
               key={key}
               onClick={() => onSelectAnswer(key)}
-              className={`flex items-center gap-2 px-4 py-2 border border-[#4242E0] text-[#4242E0] ${
+              className={`rows-questions flex items-center gap-3 px-5 py-2 border border-[#4242E0] text-[#4242E0] ${
                 selectedAnswer === key
                   ? 'bg-blue-500 text-[#fff]'
                   : 'bg-[#C8D2D9]'
@@ -49,7 +49,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({
           ) : null,
         )}
       </div>
-      <div className="flex justify-between mt-4">
+      <div className=" footer-buttons flex justify-between mt-4">
         <button
           onClick={onPrev}
           disabled={currentIndex === 0}

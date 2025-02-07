@@ -5,14 +5,40 @@
 }
 
 .start-title {
-  font-size: 130px;
+  font-size: 180px;
   text-align: right;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .start-forge {
   font-size: 30px;
   text-align: right;
-  margin-top: -30px;
+  margin-top: -70px;
+}
+
+.question {
+  color: #4242e0;
+  font-weight: 400;
+  font-size: 66px;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+}
+
+.question-complete {
+  font-family: 'Sora', serif;
+  font-size: 26px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.rows-questions {
+  min-height: 55px;
+  text-align: left;
+}
+
+.footer-buttons {
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .start-lets {
@@ -35,11 +61,14 @@
 }
 
 .content-bravo {
-  font-size: 150px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 200px;
 }
 
 .content-score {
-  font-size: 45px;
+  font-size: 79px;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-top: -90px;
 }
 
 .content-restart {
@@ -55,7 +84,8 @@
   width: 44%;
   height: 100%;
   background-color: white;
-  font-size: 140px;
+  font-size: 250px;
   color: #4242e0;
   font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
 }
